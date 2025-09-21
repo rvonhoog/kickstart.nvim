@@ -897,12 +897,12 @@ require('lazy').setup({
     'loctvl842/monokai-pro.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
-      ---@diagnostic disable-next-line: missing-fields
+      -- Configure Monokai Pro with Machine filter
+      require('monokai-pro').setup({
+        filter = 'machine',  -- machine | octagon | pro | classic | spectrum | ristretto
+      })
 
       -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-
       vim.cmd.colorscheme 'monokai-pro'
 
       -- You can configure highlights by doing something like:
